@@ -140,7 +140,7 @@ class AutoClicker:
 
         def apply():
             try:
-                val = int(var.get())
+                val = float(var.get()) if col_name == "ms" else int(var.get())
                 self.rows[idx][col_name.lower()] = val
                 self._refresh_table()
                 win.destroy()
