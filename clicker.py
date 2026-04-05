@@ -128,6 +128,7 @@ class AutoClicker:
 
         win = tk.Toplevel(self.root)
         win.title(f"{col_name} 수정")
+        win.geometry("300x100")
         win.grab_set()
 
         current = self.rows[idx][col_name.lower()]
