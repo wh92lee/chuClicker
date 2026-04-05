@@ -19,7 +19,7 @@ except ImportError:
 # ────────── 설정 ──────────
 DEFAULT_START_KEY = "f6"
 DEFAULT_RECORD_KEY = "f7"
-DEFAULT_INTERVAL_MS = 500
+DEFAULT_INTERVAL_MS = 15
 
 # ────────── 메인 앱 ──────────
 class AutoClicker:
