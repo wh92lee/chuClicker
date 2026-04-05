@@ -11,6 +11,8 @@ import sys
 try:
     import pyautogui
     import keyboard
+    pyautogui.PAUSE = 0        # 클릭 후 자동 딜레이 제거
+    pyautogui.FAILSAFE = False # 화면 모서리 이동 시 예외 방지
 except ImportError:
     pass
 
