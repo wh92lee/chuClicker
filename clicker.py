@@ -243,12 +243,16 @@ class AutoClicker:
         self.toggle_btn.config(text="▶ 시작", bg="#4CAF50")
 
     def _run_macro(self):
-        while self.running:
-            for row in self.rows:
-                if not self.running:
-                    break
-                pyautogui.click(row["x"], row["y"])
-                time.sleep(row["ms"] / 1000)
+        try:
+            while self.running:
+                for row in self.rows:
+                    if not self.running:
+                        break
+                    pyautogui.click(row["x"], row["y"])
+                    time.sleep(row["ms"] / 1000)
+        except Exception as e:
+            self.root.after(0, lambda: self.status_var.set(f"오류: {e}"))
+            self.root.after(0, self._stop)
 
     def on_close(self):
         self.running = False
